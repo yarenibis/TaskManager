@@ -33,5 +33,10 @@ namespace TaskManager
         public List<Note> GetNotes(User user ) {
             return user.notes.ToList();
         }
+
+        public Note FindNoteById(Guid id, User user)
+        {
+            return user.notes.FirstOrDefault(s => s.id == id);
+        }
     }
 }
