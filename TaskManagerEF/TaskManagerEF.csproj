@@ -5,10 +5,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AC25935B-34BB-4D88-9020-C24C78FC9664}</ProjectGuid>
+    <ProjectGuid>{977E7C85-0E04-45DB-B3C7-F3B0E074DE39}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>TaskManagerForm</RootNamespace>
-    <AssemblyName>TaskManagerForm</AssemblyName>
+    <RootNamespace>TaskManagerEF</RootNamespace>
+    <AssemblyName>TaskManagerEF</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\202507231131586_RenameToAppUsers.cs" />
+    <Compile Include="Migrations\202507231131586_RenameToAppUsers.Designer.cs">
+      <DependentUpon>202507231131586_RenameToAppUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="TaskManagerContext.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
@@ -64,14 +70,18 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202507231131586_RenameToAppUsers.resx">
+      <DependentUpon>202507231131586_RenameToAppUsers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
