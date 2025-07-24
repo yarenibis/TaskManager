@@ -11,7 +11,7 @@ namespace TaskManagerForm
 {
     public class UserDal
     {
-        SqlConnection _sqlConnection = new SqlConnection(@"server=YAREN
+         SqlConnection _sqlConnection = new SqlConnection(@"server=YAREN
             ; initial catalog=TaskManager; integrated security=true");
         public List<User> GetUsers()
         {
@@ -26,9 +26,9 @@ namespace TaskManagerForm
 
                 User user = new User
                 {
-                    id = Convert.ToInt32(reader["Id"]),
+                    Id = Convert.ToInt32(reader["Id"]),
                     name = reader["name"].ToString(),
-                    email = reader["mail"].ToString(),
+                    mail = reader["mail"].ToString(),
                     password = reader["password"].ToString(),
                     role = reader["role"].ToString()
                 };
@@ -58,7 +58,7 @@ namespace TaskManagerForm
                 _sqlConnection
             );
             cmd.Parameters.AddWithValue("@name", user.name);
-            cmd.Parameters.AddWithValue("@mail", user.email);
+            cmd.Parameters.AddWithValue("@mail", user.mail);
             cmd.Parameters.AddWithValue("@password", user.password);
             cmd.Parameters.AddWithValue("@role", user.role);
 
@@ -75,10 +75,10 @@ namespace TaskManagerForm
             );
 
             cmd.Parameters.AddWithValue("@name", user.name);
-            cmd.Parameters.AddWithValue("@mail", user.email);  // user.email doğru
+            cmd.Parameters.AddWithValue("@mail", user.mail);  // user.email doğru
             cmd.Parameters.AddWithValue("@password", user.password);
             cmd.Parameters.AddWithValue("@role", user.role);
-            cmd.Parameters.AddWithValue("@Id", user.id);
+            cmd.Parameters.AddWithValue("@Id", user.Id);
 
             cmd.ExecuteNonQuery();
             _sqlConnection.Close();
@@ -95,6 +95,37 @@ namespace TaskManagerForm
 
             cmd.ExecuteNonQuery();
             _sqlConnection.Close();
+        }
+
+
+        public User Login(string mail, string pwd)
+        {
+            isConnected();
+            SqlCommand cmd = new SqlCommand("select * from Users where mail=@mail and password=@password",_sqlConnection);
+            cmd.Parameters.AddWithValue("@mail", mail);
+            cmd.Parameters.AddWithValue("@password", pwd);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            User user = null;
+
+
+            if (reader.Read())
+            {
+                user = new User
+                {
+                    Id = Convert.ToInt32(reader["Id"]),
+                    name = reader["name"].ToString(),
+                    mail = reader["mail"].ToString(),
+                    password = reader["password"].ToString(),
+                    role = reader["role"].ToString()
+                };
+            }
+
+            reader.Close();
+            _sqlConnection.Close();
+
+            return user;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace TaskManagerForm
             _userDal.AddUser(new User
             {
                 name = tb_add_name.Text,
-                email = tb_add_mail.Text,
+                mail = tb_add_mail.Text,
                 password = tb_add_pwd.Text,
                 role = tb_add_role.Text
             });
@@ -55,9 +55,9 @@ namespace TaskManagerForm
         {
             _userDal.UpdateUser(new User
             {
-                id = Convert.ToInt32(dataGridView.CurrentRow.Cells[0].Value),
+                Id = Convert.ToInt32(dataGridView.CurrentRow.Cells[0].Value),
                 name = tb_name_update.Text,
-                email = tb_mail_update.Text,
+                mail = tb_mail_update.Text,
                 password = tb_pwd_update.Text,
                 role = tb_role_update.Text
             });

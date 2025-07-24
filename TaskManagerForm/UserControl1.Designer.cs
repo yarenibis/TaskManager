@@ -270,7 +270,7 @@
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.groupBoxAddUser);
             this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(800, 450);
+            this.Size = new System.Drawing.Size(797, 523);
             this.Load += new System.EventHandler(this.UserControl1_Load);
             this.groupBoxAddUser.ResumeLayout(false);
             this.groupBoxAddUser.PerformLayout();

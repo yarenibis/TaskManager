@@ -10,13 +10,14 @@ namespace TaskManagerForm
     public class User
     {
 
-
-        public int id { get;  set; }
+        public int Id { get;  set; }
         public string name { get; set; }
-        public string email { get; set; }
+        public string mail { get; set; }
         public string password { get; set; }
 
         public string role { get; set; }
+
+        public List<Note> notes { get; set; }
 
     
     }
