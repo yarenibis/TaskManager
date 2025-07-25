@@ -52,11 +52,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202507231131586_RenameToAppUsers.cs" />
-    <Compile Include="Migrations\202507231131586_RenameToAppUsers.Designer.cs">
-      <DependentUpon>202507231131586_RenameToAppUsers.cs</DependentUpon>
+    <Compile Include="Migrations\202507251059096_InitialCreate.cs" />
+    <Compile Include="Migrations\202507251059096_InitialCreate.Designer.cs">
+      <DependentUpon>202507251059096_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Note.cs" />
+    <Compile Include="NoteDal.cs" />
+    <Compile Include="NoteForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NoteForm.Designer.cs">
+      <DependentUpon>NoteForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TaskManagerContext.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserControl1.cs">
@@ -74,8 +82,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202507231131586_RenameToAppUsers.resx">
-      <DependentUpon>202507231131586_RenameToAppUsers.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202507251059096_InitialCreate.resx">
+      <DependentUpon>202507251059096_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NoteForm.resx">
+      <DependentUpon>NoteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>

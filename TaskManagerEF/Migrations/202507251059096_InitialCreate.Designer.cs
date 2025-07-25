@@ -7,13 +7,13 @@ namespace TaskManagerEF.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.5.1")]
-    public sealed partial class RenameToAppUsers : IMigrationMetadata
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(RenameToAppUsers));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "202507231131586_RenameToAppUsers"; }
+            get { return "202507251059096_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

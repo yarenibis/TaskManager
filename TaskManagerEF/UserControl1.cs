@@ -26,15 +26,23 @@ namespace TaskManagerEF
 
         private void btn_add_user_Click(object sender, EventArgs e)
         {
-            _userdal.Add(new User
+            try
             {
-                name = tb_add_name.Text,
-                email = tb_add_mail.Text,
-                password = tb_add_pwd.Text,
-                role = tb_add_role.Text
-            });
-            dataGridView.DataSource = _userdal.GetAll();
-            MessageBox.Show("User added");
+                _userdal.Add(new User
+                {
+                    name = tb_add_name.Text,
+                    email = tb_add_mail.Text,
+                    password = tb_add_pwd.Text,
+                    role = tb_add_role.Text
+                });
+
+                dataGridView.DataSource = _userdal.GetAll();
+                MessageBox.Show("Kullanıcı eklendi!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("HATA: " + ex.Message);
+            }
         }
 
         private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -49,7 +57,7 @@ namespace TaskManagerEF
         {
             _userdal.Update(new User
             {
-                Id = Convert.ToInt32(dataGridView.CurrentRow.Cells[0].Value),
+                id = Convert.ToInt32(dataGridView.CurrentRow.Cells[0].Value),
                 name = tb_name_update.Text,
                 email = tb_mail_update.Text,
                 password = tb_pwd_update.Text,
@@ -64,7 +72,7 @@ namespace TaskManagerEF
         {
             _userdal.Delete(new User
             {
-                Id= Convert.ToInt32(dataGridView.CurrentRow.Cells[0].Value)
+                id= Convert.ToInt32(dataGridView.CurrentRow.Cells[0].Value)
             });
             dataGridView.DataSource = _userdal.GetAll();
             MessageBox.Show("User deleted");

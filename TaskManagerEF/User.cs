@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace TaskManagerEF
 {
-    [Table("AppUsers")]
+    [Table("Users")]
     public class User
     {
 
 
-        public int Id { get;  set; }
+        public int id { get;  set; }
         public string name { get; set; }
 
         public string email { get; set; }

@@ -38,9 +38,9 @@ namespace TaskManagerEF
         
         using(TaskManagerContext tc = new TaskManagerContext())
             {
-                var entity=tc.Entry(user);
-                entity.State= System.Data.Entity.EntityState.Modified;
-                tc.SaveChanges();
+                var entity=tc.Entry(user); //user nesnesine ait entity state alınır
+                entity.State= System.Data.Entity.EntityState.Modified; //güncellenecek olarak işaretlenir.
+                tc.SaveChanges(); //veritabanında güncellenir.
             }
                 
         }
