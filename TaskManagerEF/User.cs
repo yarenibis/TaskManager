@@ -20,7 +20,8 @@ namespace TaskManagerEF
         public string password { get; set; }
 
         public string role { get; set; }
+        public virtual List<Note> Notes { get; set; }
 
-    
+
     }
 }

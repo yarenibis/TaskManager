@@ -34,5 +34,25 @@ namespace TaskManagerForm
                 MessageBox.Show("Giriş bilgileri hatalı");
             }
         }
+
+        private void login_label_mail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_login_pwd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_login_pwd_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_login_mail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -41,6 +41,7 @@
             this.tb_login_mail.Name = "tb_login_mail";
             this.tb_login_mail.Size = new System.Drawing.Size(161, 22);
             this.tb_login_mail.TabIndex = 0;
+            this.tb_login_mail.TextChanged += new System.EventHandler(this.tb_login_mail_TextChanged);
             // 
             // tb_login_pwd
             // 
@@ -48,6 +49,7 @@
             this.tb_login_pwd.Name = "tb_login_pwd";
             this.tb_login_pwd.Size = new System.Drawing.Size(161, 22);
             this.tb_login_pwd.TabIndex = 1;
+            this.tb_login_pwd.TextChanged += new System.EventHandler(this.tb_login_pwd_TextChanged);
             // 
             // login_btn
             // 
@@ -67,6 +69,7 @@
             this.login_label_mail.Size = new System.Drawing.Size(32, 16);
             this.login_label_mail.TabIndex = 3;
             this.login_label_mail.Text = "Mail";
+            this.login_label_mail.Click += new System.EventHandler(this.login_label_mail_Click);
             // 
             // label_login_pwd
             // 
@@ -76,6 +79,7 @@
             this.label_login_pwd.Size = new System.Drawing.Size(66, 16);
             this.label_login_pwd.TabIndex = 4;
             this.label_login_pwd.Text = "password";
+            this.label_login_pwd.Click += new System.EventHandler(this.label_login_pwd_Click);
             // 
             // Login
             // 

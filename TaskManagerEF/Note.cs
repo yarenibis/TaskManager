@@ -15,7 +15,13 @@ namespace TaskManagerEF
         public string content { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
+        // Foreign key
+        public int UserId { get; set; }
 
-       
+        // Navigation property
+        [ForeignKey("UserId")]
+        public virtual User User { get; set; }
+
+
     }
 }

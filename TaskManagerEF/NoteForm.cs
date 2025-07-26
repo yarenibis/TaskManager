@@ -12,7 +12,8 @@ namespace TaskManagerEF
 {
     public partial class NoteForm : UserControl
     {
-        public NoteForm()
+        private User _currentUser;
+        public NoteForm(User currentUser)
         {
             InitializeComponent();
             try
@@ -24,6 +25,8 @@ namespace TaskManagerEF
             {
                 MessageBox.Show("HATA: " + ex.Message);
             }
+
+            _currentUser = currentUser;
         }
 
 
@@ -41,7 +44,8 @@ namespace TaskManagerEF
                 title = tb_add_title.Text,
                 content = tb_add_content.Text,
                 UpdatedDate = DateTime.Now,
-                CreatedDate = DateTime.Now
+                CreatedDate = DateTime.Now,
+                UserId = _currentUser.id
             });
             dataGridViewNote.DataSource= _notedal.GetAll();
             MessageBox.Show("Note added");
@@ -53,12 +57,14 @@ namespace TaskManagerEF
             tb_update_content.Text= dataGridViewNote.CurrentRow.Cells[2].Value.ToString();
             tb_update_cdate.Text= dataGridViewNote.CurrentRow.Cells[3].Value.ToString();
             tb_update_udate.Text= dataGridViewNote.CurrentRow.Cells[4].Value.ToString();
+            
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
             int selected_note =Convert.ToInt32(dataGridViewNote.CurrentRow.Cells[0].Value);
             var old_note= _notedal.GetNoteById(selected_note);
+            
 
             _notedal.UpdateNote(new Note
             {
@@ -66,7 +72,8 @@ namespace TaskManagerEF
                 title = tb_update_title.Text,
                 content = tb_update_content.Text,
                 UpdatedDate = DateTime.Now,
-                CreatedDate = old_note.CreatedDate
+                CreatedDate = old_note.CreatedDate,
+                UserId = _currentUser.id
             });
             dataGridViewNote.DataSource = _notedal.GetAll();
             MessageBox.Show("Note updated");

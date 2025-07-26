@@ -1,4 +1,4 @@
-﻿namespace TaskManagerForm
+﻿namespace TaskManagerFormEF
 {
     partial class MainForm
     {

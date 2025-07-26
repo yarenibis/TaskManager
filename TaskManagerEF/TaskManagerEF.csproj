@@ -52,9 +52,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Login.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202507251059096_InitialCreate.cs" />
     <Compile Include="Migrations\202507251059096_InitialCreate.Designer.cs">
       <DependentUpon>202507251059096_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202507261014449_AddUserNoteRelation.cs" />
+    <Compile Include="Migrations\202507261014449_AddUserNoteRelation.Designer.cs">
+      <DependentUpon>202507261014449_AddUserNoteRelation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Note.cs" />
@@ -65,6 +81,7 @@
     <Compile Include="NoteForm.Designer.cs">
       <DependentUpon>NoteForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Session.cs" />
     <Compile Include="TaskManagerContext.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserControl1.cs">
@@ -82,8 +99,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202507251059096_InitialCreate.resx">
       <DependentUpon>202507251059096_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202507261014449_AddUserNoteRelation.resx">
+      <DependentUpon>202507261014449_AddUserNoteRelation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NoteForm.resx">
       <DependentUpon>NoteForm.cs</DependentUpon>

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace TaskManagerEF
 {
@@ -23,6 +24,15 @@ namespace TaskManagerEF
             using (TaskManagerContext tc = new TaskManagerContext())
             {
                 return tc.Users.Where(p => p.name == name).ToList();
+            }
+        }
+
+
+        public User Login(string mail, string pwd)
+        {
+            using (TaskManagerContext tc = new TaskManagerContext())
+            {
+                return tc.Users.FirstOrDefault(p => p.email == mail && p.password == pwd);
             }
         }
 

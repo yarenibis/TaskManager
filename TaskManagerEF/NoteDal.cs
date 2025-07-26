@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace TaskManagerEF
 {
@@ -12,7 +13,7 @@ namespace TaskManagerEF
         {
             using (TaskManagerContext context = new TaskManagerContext())
             {
-                return context.Notes.ToList();
+                return context.Notes.Include(n => n.User).ToList();
             }
         }
 
