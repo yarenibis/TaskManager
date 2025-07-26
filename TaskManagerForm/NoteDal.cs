@@ -10,7 +10,7 @@ namespace TaskManagerForm
 {
     public class NoteDal
     {
-        SqlConnection _sqlConnection = new SqlConnection(@"server=YAREN
+        SqlConnection _sqlConnection = new SqlConnection(@"server=YOUR-SERVER-NAME
         ; initial catalog=TaskManager; integrated security=true");
         public List<Note> GetAll()
         {
