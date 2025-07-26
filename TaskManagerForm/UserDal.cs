@@ -11,7 +11,7 @@ namespace TaskManagerForm
 {
     public class UserDal
     {
-         SqlConnection _sqlConnection = new SqlConnection(@"server=YAREN
+         SqlConnection _sqlConnection = new SqlConnection(@"server=YOUR-SERVER-NAME
             ; initial catalog=TaskManager; integrated security=true");
         public List<User> GetUsers()
         {
